@@ -4,6 +4,7 @@ import EventList from "../../components/events/event-list";
 import ResultsTitle from "../../components/events/results-title";
 import { Fragment } from "react";
 import Button from "../../components/ui/button";
+import ErrorAlert from "../../components/ui/error-alert";
 
 function FilteredEventsPage() {
   const router = useRouter();
@@ -28,7 +29,9 @@ function FilteredEventsPage() {
   ) {
     return (
       <Fragment>
-        <p>Invalid data input. Please check it again !!!</p>
+        <ErrorAlert>
+          Invalid data input. Please check it again !!!
+        </ErrorAlert>
         <div className="center">
           <Button link="/events">Show All Events</Button>
         </div>
@@ -44,7 +47,9 @@ function FilteredEventsPage() {
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
-        <p>Invalid filtered event!</p>
+        <ErrorAlert>
+          Invalid filtered event!
+        </ErrorAlert>
         <div className="center">
           <Button link="/events">Show All Events</Button>
         </div>

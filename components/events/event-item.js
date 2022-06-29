@@ -12,7 +12,7 @@ function EventItem(props) {
     month: "long",
     year: "numeric"
   });
-  const formattedAdrr = location.replace(', ', '\n');
+  // const formattedAdrr = location.replace(', ', '\n');
   const exploreLink = `/events/${id}`;
 
   return (
@@ -27,7 +27,7 @@ function EventItem(props) {
           </div>
           <div className={classes.address}>
             <AddressIcon />
-            <address>{formattedAdrr}</address>
+            <address>{location}</address>
           </div>
         </div>
         <div className={classes.actions}>
